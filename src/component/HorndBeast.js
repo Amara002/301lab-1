@@ -22,15 +22,17 @@ class HorndBeast extends React.Component {
 
     }
 
+    
+
 
 
 
     render() {
         return (
 
-            <div className='beast' style={{display: 'inline-block'}}>
-                <Card style={{ width: '18rem'}}>
-                    <Card.Img variant="top" src={this.props.imgUrl} style={{height:'18rem'}} />
+            <div   className='beast' style={{display: 'inline-block'}}>
+                <Card key ={this.props.indx} style={{ width: '18rem'}} >
+                    <Card.Img   onClick ={this.props.handleShow} variant="top" src={this.props.imgUrl} style={{height:'18rem'}} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
