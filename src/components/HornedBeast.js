@@ -23,6 +23,10 @@ class HornedBeast extends React.Component {
 
     }
 
+    showEachCard = () => {
+        this.props.showModal(this.props.title);
+    };
+
     render() {
         return (
             <>
@@ -31,8 +35,8 @@ class HornedBeast extends React.Component {
             <p>{this.props.descreption}</p>    */}
 
                 <div className='beast' style={{ display: 'inline-block' }}>
-                    <Card  style={{ width: '18rem' }} >
-                        <Card.Img variant="top" src={this.props.imgUrl} style={{ height: '18rem' }} />
+                    <Card style={{ width: '18rem' }} >
+                        <Card.Img onClick={this.showEachCard} variant="top" src={this.props.imgUrl} style={{ height: '18rem' }} />
                         <Card.Body>
                             <Card.Title>{this.props.title}</Card.Title>
                             <Card.Text>
