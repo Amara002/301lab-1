@@ -1,6 +1,6 @@
 import React from 'react';
 import HornedBeast from './HornedBeast';
-import horndBeastData from './horndBeastData.json'
+import horndBeastData from './horndBeastData.json';
 
 
 class Main extends React.Component {
@@ -24,6 +24,8 @@ class Main extends React.Component {
                             title={item.title}
                             imgUrl={item.image_url}
                             description={item.description}
+                            showModal = {this.props.showModal}
+                            
                         />
                     )
                 })}
