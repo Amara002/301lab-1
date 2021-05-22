@@ -21,7 +21,7 @@ class App extends React.Component {
     }
     showModal = (title) => {
         let selectedBeast = horndBeastData.find(item => {
-            if (item.title == title) {
+            if (item.title === title) {
                 return item;
             }
         }
@@ -36,6 +36,12 @@ class App extends React.Component {
     handleClose = () => {
         this.setState({
             show: false
+        })
+    };
+
+    showFilterd = (filterdBeast) =>{
+        this.setState({
+            horndBeastData : filterdBeast
         })
     };
 
@@ -56,9 +62,10 @@ class App extends React.Component {
         return (
             <>
                 <Header />
-                <Main data={this.state.horndBeastData} showModal={this.showModal} />
+                <Main horndBeastData={this.state.horndBeastData} showModal={this.showModal} showFilterd={this.showFilterd} />
                 <Footer />
                 <SelectedBeast
+                    horndBeastData = {this.state.horndBeastData}
                     show={this.state.show}
                     handleClose={this.handleClose}
                     selected={this.state.selected}
