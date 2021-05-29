@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 
 class Main extends React.Component {
     submitForm = (event) => {
+
         let numberOfHorns = event.target.value;
         let hornsData = horndBeastData;
         let filterdBeast;
@@ -50,10 +51,10 @@ class Main extends React.Component {
                     </Form.Group>
                 </Form>
 
-                {horndBeastData.map(item => {
+                {this.props.horndBeastData.map(item => {
                     return (
                         <HornedBeast
-                            
+
                             title={item.title}
                             imgUrl={item.image_url}
                             description={item.description}
